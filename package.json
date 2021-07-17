@@ -1,12 +1,13 @@
 {
-  "name": "Schreate-Awup",
+  "name": "schreate-awup",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "mongoose": "^5.13.3"
+    "mongoose": "^5.13.3",
+    "passport": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {
