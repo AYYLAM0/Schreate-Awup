@@ -1,6 +1,6 @@
 module.exports = {
     User: require("./User"),
-    Transaction: require("./Transaction")
-
+    Transaction: require("./Transaction"),
+    Job: require("./Job")
   };
   
