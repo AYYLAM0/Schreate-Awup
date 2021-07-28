@@ -1,35 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-
-
 const Signup = () => {
     return (
-        <div class="container login-box ">
+        <div className="login-box">
 
-            <h3 class=" text-center">Sign Up</h3>
+            <h3 className="login-header">Sign Up</h3>
+            <div className="login-body">
+                <form className="form-group">
 
-            <form id="signup-form" class="card-body">
+                    <div>
+                        {/* <label>Username</label> */}
+                        <input type="username" className="form-control bg-white" placeholder="Username" />
+                    </div>
 
-                <div class="mb-3 d-flex justify-content-center">
-                    <label for="username-signup" class="form-label ">  </label>
-                    <input id="username-signup" type="text" class="form-input" placeholder="username" />
-                </div>
+                    {/* <label>Password</label> */}
+                    <input type="password" className="form-control bg-white mt-2" placeholder="Password" />
 
-                <div class="mb-3 d-flex justify-content-center">
-                    <label class="form-label " for="password-signup"></label>
-                    <input id="password-signup" type="password" class="form-input" placeholder="password" />
-                </div>
+                    <div className="mb-3 d-flex justify-content-center">
+                        <button type="submit" className="form-control btn btn-outline-success mt-3">Sign-up!</button>
+                    </div>
 
-                <div class="mb-3 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Sign-up!</button>
-                </div>
+                    <Link className="login-link d-flex justify-content-center " to="/">
+                        Already have an account? Login here!
+                    </Link>
 
-                <Link class="login-link d-flex justify-content-center " to="/">Already have an account? Login here!
-                
-                </Link>
+                </form>
+            </div>
 
-            </form>
+
 
         </div>
     )

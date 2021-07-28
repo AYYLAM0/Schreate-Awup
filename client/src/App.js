@@ -6,6 +6,8 @@ import Signup from './pages/signup';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './App.css';
+import {MyForm} from './pages/form'
+
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Switch>
         <Route exact={true} path="/" component={HomePage} />
         <Route exact={true} path="/signup" component={Signup} />
+        <Route exact={true} path="/form" component={MyForm} />
+
       </Switch>
       <Footer />
     </Router>
