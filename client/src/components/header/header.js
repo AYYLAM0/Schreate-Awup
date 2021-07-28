@@ -1,11 +1,13 @@
 import React from 'react'
 
 const Header = () => {
+
+    
     return (
         <div>
-            <div class="jumbotron navbar-dark bg-dark text-white">
-                <h1 class="display-4">Schreate-Awup</h1>
-                <p class="lead">
+            <div className="jumbotron navbar-dark bg-dark text-white d-flex justify-content-between">
+                <h1 className="display-6">Schreate-Awup</h1>
+                <p className="lead">
                     Description if project will go here
                 </p>
                 

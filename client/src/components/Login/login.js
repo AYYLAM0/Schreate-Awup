@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './style.css'
 
 const Login = () => {
     return (
@@ -8,14 +9,18 @@ const Login = () => {
                 <div className="login-header">Login</div>
                 <div className="login-body">
                     <form className="form-group">
-                        <label>Username</label>
-                        <input type="text" className="form-control" name="" />
-                        <label>Password</label>
-                        <input type="password" className="form-control" name="" />
+                        <div>
+                            {/* <label>Username</label> */}
+                        <input type="username" className="form-control bg-white" placeholder="Username" />
+                        </div>
                         
-                        <input type="submit" value="Login" className="form-control btn btn-primary " name="" />
+                        {/* <label>Password</label> */}
+                        <input type="password" className="form-control bg-white mt-2" placeholder="Password" />
+                        
+                        <input type="submit" value="Login" className="form-control btn btn-outline-primary mt-3 " name="" />
+
                         <Link to="/signup">
-                        <input type="submit" value="Signup" className="form-control btn btn-success mt-3 " name="" />
+                        <input type="submit" value="Signup" className="form-control btn btn-outline-success mt-3 " name="" />
                         </Link>
 
                         
