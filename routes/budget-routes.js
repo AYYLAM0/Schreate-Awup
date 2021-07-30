@@ -8,12 +8,19 @@ router.route('/').get((req, res) => {
 })
 
 router.route('/add').post((req, res) => {
-    const transaction = req.body.name;
+    const name = req.body.name
+    const value = req.body.value
+    const date = req.body.date
 
-    const newBudget = new Budget({ transaction })
+    const newBudget = new Budget({ 
+        name,
+        value,
+        date,    
+    })
     newBudget.save()
     .then(() => res.json('transaction added!'))
     .catch(err => res.status(400).json('Error ' + err));
 });
+
 
 module.exports = router;

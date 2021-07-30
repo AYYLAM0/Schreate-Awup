@@ -7,8 +7,20 @@ router.route('/').get((req,res) => {
     .catch(err => res.status(400).json('Error ' + err))
 })
 router.route('/add').post((req,res)=>{
-    const job = req.body.name
-    const newJob = new Job({ job })
+    const id = req.body.id
+    const name = req.body.name
+    const company = req.body.company
+    const budget = req.body.budget
+    const dateStart = req.body.dateStarted
+    const finish = req.body.finishDate
+    const newJob = new Job({
+         id,
+         name,
+         company,
+         budget,
+         dateStart,
+         finish
+        })
 
     newJob.save()
     .then(() => res.json('job added'))
