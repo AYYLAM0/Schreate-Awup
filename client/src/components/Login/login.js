@@ -1,21 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import './style.css'
 
 const Login = () => {
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("username is " + username);
+    console.log("password is " + password);
+    }
     return (
         <div>
             <div className="login-box" >
                 <div className="login-header">Login</div>
                 <div className="login-body">
-                    <form className="form-group">
+                    <form className="form-group" onSubmit={handleSubmit}>
                         <div>
                             {/* <label>Username</label> */}
-                        <input type="username" className="form-control bg-white" placeholder="Username" />
+                        <input 
+                        type="username" 
+                        className="form-control bg-white"
+                        placeholder="Username" 
+                        name="username"
+                        onChange={(e) => setUsername(e.target.value)}
+                         />
                         </div>
                         
                         {/* <label>Password</label> */}
-                        <input type="password" className="form-control bg-white mt-2" placeholder="Password" />
+                        <input 
+                        type="password" 
+                        className="form-control bg-white mt-2" 
+                        placeholder="Password"
+                        name="password"
+                        onChange={(e)=> setPassword(e.target.value)}
+                        />
                         
                         <input type="submit" value="Login" className="form-control btn btn-outline-primary mt-3 " name="" />
 
@@ -32,4 +52,5 @@ const Login = () => {
 
     )
 }
+
 export default Login;

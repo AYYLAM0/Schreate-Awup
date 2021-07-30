@@ -9,6 +9,11 @@ const JobSchema = new Schema(
       unique: true,
       required: true,
     },
+    name:{
+      type: String,
+      unique: false,
+      required: true
+    },
     company: {
       type: String,
       trim: true,
