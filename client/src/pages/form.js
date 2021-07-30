@@ -20,7 +20,7 @@ export class MyForm extends React.Component {
             <div className="container bg-white border border-primary round mt-5">
                 <div className="row">
                     <h1 className="text-center">Job get! {this.state.username} {this.state.age}</h1>
-                    <form className="col-md-9 go-right">
+                    <form className="col-md-8 go-right">
 
                         <p>Infomation on Job</p>
 
@@ -71,16 +71,16 @@ export class MyForm extends React.Component {
 
                         <div className="form-group">
                             <textarea
-                                name="phone"
+                                name="jobDetails"
                                 type="text"
                                 className="form-control"></textarea>
                             <label>Jobs Details :</label>
                         </div>
 
-                        <div>
+                    </form>
+                        <div className="d-flex justify-content-end">
                             <input className="btn btn-outline-primary btn-lg" type="submit" value="Submit" />
                         </div>
-                    </form>
 
 
 
