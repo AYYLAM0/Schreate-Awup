@@ -5,6 +5,7 @@
   "main": "server.js",
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.2.0",

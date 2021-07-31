@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './App.css';
 import form from './pages/form'
+import MainPage from './pages/mainPage';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route exact={true} path="/" component={HomePage} />
         <Route exact={true} path="/signup" component={Signup} />
         <Route exact={true} path="/newform" component={form} />
+        <Route exact={true} path="/mainpage" component={MainPage} />
+
 
       </Switch>
       <Footer />
