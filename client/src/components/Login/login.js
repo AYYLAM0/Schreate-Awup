@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import './style.css'
+import API from '../../utils/API'
 
 const Login = () => {
     const [username, setUsername] = useState();
@@ -10,6 +11,8 @@ const Login = () => {
     e.preventDefault();
     console.log("username is " + username);
     console.log("password is " + password);
+    API.signIn({ username, password})
+    .then()
     }
     return (
         <div>

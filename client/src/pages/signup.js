@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
+import API from '../utils/API'
 
 const Signup = () => {
     const [username, setUsername] = useState();
@@ -10,6 +11,10 @@ const Signup = () => {
         e.preventDefault();
         console.log("username is " + username);
         console.log("password is " + password);
+        API.createUser({ username, password })
+        .then((response) => {
+            console.log(response)
+        })
      
     };
 

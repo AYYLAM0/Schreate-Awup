@@ -11,9 +11,7 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true,
-        validate: {
-            len: [8]
-        }
+        minLength: 8
     }
 
 }
