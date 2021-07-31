@@ -1,26 +1,47 @@
-import React from 'react'
+import React,{useState} from 'react'
+import API from '../utils/API'
 
 
-export class MyForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            age: null,
+// export class MyForm extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             username: '',
+//             age: null,
+//         };
+//     }
+const NewJob = () => {
+    const [bid,setBid] =useState()
+    const [name, setName] = useState()
+    const [company, setCompany] = useState()
+    const [budget, setBudget] = useState()
+    const [dateStarted, setStart] = useState()
+    const [finishDate, setFinish] = useState()
+    const [description, setDescription] = useState()
+
+    // myChangeHandler = (event) => {
+    //     let nam = event.target.name;
+    //     let val = event.target.value;
+    //     this.setState({ [nam]: val });
+        
+    // }
+    // render() {
+        const handleSubmit = e => {
+            e.preventDefault();
+            console.log("job created for " + name);
+          
+            API.createJob({bid, name, company, budget, dateStarted, finishDate, description })
+            .then((response) => {
+                console.log(response)
+            })
+         
         };
-    }
-    myChangeHandler = (event) => {
-        let nam = event.target.name;
-        let val = event.target.value;
-        this.setState({ [nam]: val });
-    }
-    render() {
 
         return (
             <div className="container bg-white border border-primary round mt-5">
                 <div className="row">
-                    <h1 className="text-center">Job get! {this.state.username} {this.state.age}</h1>
-                    <form className="col-md-8 go-right">
+                    <h1 className="text-center">Job get!</h1>
+                    <form className="col-md-8 go-right" onSubmit={handleSubmit}>
 
                         <p>Infomation on Job</p>
 
@@ -28,16 +49,25 @@ export class MyForm extends React.Component {
                             <input
                                 name="jobName"
                                 type="text"
-                                onChange={this.myChangeHandler}
+                                onChange={e=> setName(e.target.value)}
                                 className="form-control" />
                             <label>Name of Job :</label>
+                        </div>
+                        
+                        <div className="form-group ">
+                            <input
+                                name="companyName"
+                                type="text"
+                                onChange={e=> setCompany(e.target.value)}
+                                className="form-control" />
+                            <label>Name of Company :</label>
                         </div>
 
                         <div className="form-group">
                             <input
                                 name="finshDate"
                                 type="text"
-                                onChange={this.myChangeHandler}
+                                onChange={e=> setFinish(e.target.value)}
                                 className="form-control" />
                             <label>Job Due Date :</label>
                         </div>
@@ -46,7 +76,7 @@ export class MyForm extends React.Component {
                             <input
                                 name="jobBid"
                                 type="text"
-                                onChange={this.myChangeHandler}
+                                onChange={e=> setBid(e.target.value)}
                                 className="form-control" />
                             <label>Job Bid :</label>
                         </div>
@@ -55,7 +85,7 @@ export class MyForm extends React.Component {
                             <input
                                 name="dateStarted"
                                 type="text"
-                                onChange={this.myChangeHandler}
+                                onChange={e=> setStart(e.target.value)}
                                 className="form-control" />
                             <label>Start Date :</label>
                         </div>
@@ -64,7 +94,7 @@ export class MyForm extends React.Component {
                             <input
                                 name="budget"
                                 type="text"
-                                onChange={this.myChangeHandler}
+                                onChange={e=> setBudget(e.target.value)}
                                 className="form-control" />
                             <label>Jobs Budget :</label>
                         </div>
@@ -73,6 +103,7 @@ export class MyForm extends React.Component {
                             <textarea
                                 name="jobDetails"
                                 type="text"
+                                onChange={e=> setDescription(e.target.value)}
                                 className="form-control"></textarea>
                             <label>Jobs Details :</label>
                         </div>
@@ -88,9 +119,11 @@ export class MyForm extends React.Component {
             </div>
         );
     }
-}
+//     }
+// }
 
 
 
 
 
+export default NewJob

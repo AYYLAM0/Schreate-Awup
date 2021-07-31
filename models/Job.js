@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const JobSchema = new Schema(
   {
-    id:{
+    bid:{
       type: Number,
       unique: true,
       required: true,
@@ -30,6 +30,9 @@ const JobSchema = new Schema(
     finshDate: {
         type: Date,
         default: Date.now + 7
+    },
+    description:{
+      type: String
     }
   }
 );
