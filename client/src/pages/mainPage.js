@@ -1,6 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-
+import API from '../utils/API'
 const style = {
     height: '100vh',
     maxWidth: '150vh'

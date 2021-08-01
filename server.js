@@ -2,13 +2,18 @@ const express = require('express')
 const session = require("express-session")
 const mongoose = require('mongoose')
 const app = express()
+const passport = require("passport")
 const port = process.env.PORT || 3001
+
+require("./config/passport")(passport);
 app.use(express.json())
 app.use(session({
     secret:'secret',
     resave: true,
     saveUninitialized: true
 }))
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('dotenv').config()
 const atlas = process.env.ATLAS_URI

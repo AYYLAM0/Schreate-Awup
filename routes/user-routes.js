@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const passport = require('../config/passport');
+const passport = require('passport');
 let User = require('../models/User');
 
 router.route('/').get((req, res) => {
@@ -12,7 +12,7 @@ router.route('/add').post((req, res) => {
     console.log(req.body)
     const username = req.body.username;
     const password = req.body.password
-
+    // add bcrypt password hashing
     const newUser = new User({ username, password });
 
     newUser.save()
