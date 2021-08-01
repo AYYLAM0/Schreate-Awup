@@ -1,6 +1,7 @@
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
+import Calendar from './components/calendar/calendar';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/homepage';
 import Signup from './pages/signup';
