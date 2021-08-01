@@ -22,7 +22,7 @@ function App() {
         <Route exact={true} path="/signup" component={Signup} />
         <Route exact={true} path="/newform" component={Form} />
         <Route exact={true} path="/mainpage" component={MainPage} />
-
+        <Route exact={true} path="/calendar" component={Calendar} />
 
       </Switch>
       <Footer />

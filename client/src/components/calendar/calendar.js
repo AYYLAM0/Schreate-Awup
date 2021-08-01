@@ -1,11 +1,10 @@
 import React from "react";
 
-export default class Calendar extends React.Component {
-  render() {
+const Calendar = () => {
     return (
-      <div>
-        <h2>Calendar</h2>
-      </div>
-    );
-  }
+        <div>Calendar</div>
+
+    )
 }
+
+export default Calendar;
