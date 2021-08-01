@@ -12,11 +12,11 @@ updateUser: function(id,user){
 signIn: function (user) {
     return axios.post("/api/scraightUp/user-routes/signin", user)
 },
-// createJob: function(job){
-//     return axios.post("/api/scraightUp/job-routes/add", job)
-// },
-// createTransaction: function(transaction){
-//     return axios.post("/api/scraightUp/budget-routes/add", transaction)
-// }
+createJob: function(job){
+    return axios.post("/api/scraightUp/job-routes/add", job)
+},
+createTransaction: function(transaction){
+    return axios.post("/api/scraightUp/budget-routes/add", transaction)
+}
 
 }

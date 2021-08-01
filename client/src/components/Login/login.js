@@ -12,7 +12,9 @@ const Login = () => {
     console.log("username is " + username);
     console.log("password is " + password);
     API.signIn({ username, password})
-    .then()
+    .then(res => {
+        console.log(res)
+    })
     }
     return (
         <div>

@@ -25,11 +25,11 @@ const JobSchema = new Schema(
     },
     dateStarted : {
       type: Date,
-      default: Date.now
+      default: new Date().getDate()
     },
     finshDate: {
         type: Date,
-        default: Date.now + 7
+        default: new Date().getDate()+7
     },
     description:{
       type: String

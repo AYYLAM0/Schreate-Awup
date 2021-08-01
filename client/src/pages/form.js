@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import API from '../utils/API'
 
+
 const view = {
     height: '90vh',
     maxWidth: '200vh'
@@ -128,11 +129,12 @@ const NewJob = () => {
                                 className="form-control"></textarea>
                             <label>Jobs Details :</label>
                         </div>
-
-                    </form>
                         <div className="d-flex justify-content-end">
                             <input className="btn btn-outline-primary btn-lg" type="submit" value="Submit" />
                         </div>
+
+                    </form>
+                        
 
 
 
