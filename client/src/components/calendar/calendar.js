@@ -3,9 +3,9 @@ import moment from 'moment'
 
 const Calendar = () => {
     const value = moment()
-    const startDay = value
+    const startDay = value.clone().startOf("month")
     return (
-        <div>Calendar</div>
+        <div>{startDay.format("MM/DD")}</div>
 
     )
 }
