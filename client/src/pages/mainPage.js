@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Line } from 'react-chartjs-2'
 import API from '../utils/API'
 const style = {
@@ -22,16 +22,40 @@ const state = {
     ]
 }
 
-export default class MainPage extends React.Component {
-    render() {
+// export default class MainPage extends React.Component {
+//     render() {
+        const NewTransaction = () => {
+            const [name, setName] = useState()
+            const [value, setValue] = useState()
+            
+
+            const handleSubmit = e => {
+                e.preventDefault()
+                console.log("transaction added")
+                API.createTransaction({ name, value })
+                .then((res) =>{
+                    console.log(res) 
+                })
+               
+            }
+        
         return (
             <div className="container" style={style}>
 
-                <div className="form">
-                    <input type="text" id="t-name" placeholder="Name of transaction" />
-                    <input type="number" id="t-amount" placeholder="Transaction amount" />
-                    <button id="add-btn"> Add Funds <i className="bi bi-plus-square"></i></button>
-                    <button id="sub-btn"> Subtract Funds <i className="bi bi-dash-square"></i></button>
+                <div className="form" onSubmit={handleSubmit}>
+                    <input 
+                    type="text" 
+                    id="t-name" 
+                    placeholder="Name of transaction" 
+                    onChange={e=> setName(e.target.value)} />
+                    <input 
+                    type="number" 
+                    id="t-amount" 
+                    placeholder="Transaction amount" 
+                    onChange={e=> setValue(e.target.value)} />
+
+                    <button id="add-btn" > Add Funds <i className="bi bi-plus-square" ></i></button>
+                    <button id="sub-btn" > Subtract Funds <i className="bi bi-dash-square" ></i></button>
                 </div>
 
                 <div className="card mt-3 "  >
@@ -57,5 +81,7 @@ export default class MainPage extends React.Component {
 
         )
     }
-}
 
+
+
+export default NewTransaction

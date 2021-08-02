@@ -1,11 +1,25 @@
-const db = require("../models");
+let db;
 const bcrypt = require('bcryptjs');
 const passport = require('passport')
+const request = indexedDB.open("ScraightUP", 1);
+   
 
-
+    request.onupgradeneeded = function (event) {
+        const db = event.target.result;
+        db.createObjectStore("awaiting", { autoIncrement: true });
+      };
+      
+      request.onsuccess = function (event) {
+        db = event.target.result;
+        if (navigator.onLine) {
+          checkData();
+        }
+      };
+      
 
 module.exports = {
 
+ 
     findAll: function(req, res) {
         db.Job
         .find(req.query)

@@ -82,7 +82,7 @@ const NewJob = () => {
 
                         <div className="form-group mb-3 mx-3">
                             <input
-                                name="finshDate"
+                                name="finishDate"
                                 type="text"
                                 style={style}
                                 onChange={e=> setFinish(e.target.value)}
