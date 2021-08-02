@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React,{useState} from 'react'
 import { Line } from 'react-chartjs-2'
 import API from '../utils/API'
@@ -85,3 +86,15 @@ const state = {
 
 
 export default NewTransaction
+=======
+import React from 'react';
+import Chart from '../components/chart/chart'
+
+const MainPage = () => {
+    return (
+        <Chart />
+    )
+}
+
+export default MainPage;
+>>>>>>> a5ca7677ac464dfdf2b27c7da6e99c51731849c3
