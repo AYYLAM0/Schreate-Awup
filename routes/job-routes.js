@@ -1,6 +1,6 @@
 const router = require('express').Router()
 let Job = require('../models/Job')
-const controller = require('../controllers/controller')
+const db = require('../controllers/controller')
 
 
 router.route('/').get((req,res) => {
