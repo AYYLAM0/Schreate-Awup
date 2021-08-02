@@ -6,10 +6,6 @@ const Calendar = () => {
     const [calendar, setCalender] = useState([]);
     const [value, setValue] = useState(moment());
 
-    const startDay = value.clone().startOf("month").startOf("week");
-    const endDay = value.clone().endOf("month");
-
-
     useEffect(() => {
         const day = startDay.clone().subtract(1, "day");
         const a = []
