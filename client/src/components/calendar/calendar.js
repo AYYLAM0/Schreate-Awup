@@ -3,11 +3,14 @@ import moment from 'moment'
 
 const Calendar = () => {
     const value = moment()
-    const startDay = value.clone().startOf("month")
+    const startDay = value.clone().startOf("month").startOf("week");
+    const endDay = value.clone().endOf("month");
     return (
-        <div>{startDay.format("MM/DD")}</div>
+        <div>
+            {startDay.format("MM/DD")} - {endDay.format("MM/DD")}
+        </div>
 
-    )
+    );
 }
 
 export default Calendar;
