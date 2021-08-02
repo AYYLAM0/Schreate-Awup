@@ -2,24 +2,35 @@ import React, { useState, useEffect } from "react";
 import moment from 'moment'
 import "./calendar.css";
 
+import buildCalendar from "./build";
+
 const Calendar = () => {
     const [calendar, setCalender] = useState([]);
     const [value, setValue] = useState(moment());
 
-    const startDay = value.clone().startOf("month").startOf("week");
-    const endDay = value.clone().endOf("month");
-
 
     useEffect(() => {
-        const day = startDay.clone().subtract(1, "day");
-        const a = []
-        while (day.isBefore(endDay, "day")) {
-            a.push(
-                Array(7).fill(0).map(() => day.add(1, "day").clone())
-            )
-        }
-        setCalender(a);
+        setCalender(buildCalendar(value));
     }, [value])
+
+    const isSelected = (day) => {
+        return value.isSame(day, "day")
+    }
+
+    const beforeToday = (day) => {
+        return day.isBefore(new Date(), "day")
+    }
+
+    const isToday = (day) => {
+        return day.isSame(new Date(), "day")
+    }
+
+    const dayStyles = (day) => {
+        if (beforeToday(day)) return "before"
+        if (isSelected(day)) return "selected"
+        if (isToday(day)) return "today"
+        return ""
+    }
 
     return (
         <div className="calendar">
@@ -27,7 +38,7 @@ const Calendar = () => {
                 <div>
                     {week.map((day =>
                         <div className="day" onClick={() => setValue(day)}>
-                            <div className={value.isSame(day, "day") ? "selected" : ""}>
+                            <div className={dayStyles(day)}>
                             {day.format("D")}
                             </div>
                         </div>
