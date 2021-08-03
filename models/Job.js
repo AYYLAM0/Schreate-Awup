@@ -26,7 +26,7 @@ const JobSchema = new Schema(
       default: new Date().getDate(),
       sparse: true
     },
-    finshDate: {
+    finishDate: {
         type: Date,
         default: new Date().getDate()+7,
         sparse: true
