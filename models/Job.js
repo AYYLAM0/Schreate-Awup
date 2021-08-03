@@ -6,12 +6,10 @@ const JobSchema = new Schema(
   {
     bid:{
       type: Number,
-      unique: true,
       required: true,
     },
     name:{
       type: String,
-      unique: false,
       required: true
     },
     company: {
@@ -25,11 +23,13 @@ const JobSchema = new Schema(
     },
     dateStarted : {
       type: Date,
-      default: new Date().getDate()
+      default: new Date().getDate(),
+      sparse: true
     },
-    finshDate: {
+    finishDate: {
         type: Date,
-        default: new Date().getDate()+7
+        default: new Date().getDate()+7,
+        sparse: true
     },
     description:{
       type: String

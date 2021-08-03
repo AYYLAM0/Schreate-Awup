@@ -1,5 +1,7 @@
 const router = require('express').Router()
 let Job = require('../models/Job')
+const db = require('../controllers/controller')
+
 
 router.route('/').get((req,res) => {
     Job.find()
@@ -7,6 +9,7 @@ router.route('/').get((req,res) => {
     .catch(err => res.status(400).json('Error ' + err))
 })
 router.route('/add').post((req,res)=>{
+
     const bid = req.body.bid
     const name = req.body.name
     const company = req.body.company

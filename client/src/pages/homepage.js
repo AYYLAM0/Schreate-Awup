@@ -10,6 +10,7 @@ const HomePage = () => {
     return (
         <>
             <Login />
+            <Calendar/>
             <MainPage />
 
         </>
