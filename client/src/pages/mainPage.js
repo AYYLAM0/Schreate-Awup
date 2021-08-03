@@ -38,6 +38,7 @@ const NewTransaction = () => {
             })
 
     }
+  
 
     return (
         <div className="container" style={style}>
