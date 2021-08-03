@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import API from '../utils/API'
+import axios from 'axios'
+
 const style = {
     height: '100vh',
     maxWidth: '150vh'
@@ -27,6 +29,8 @@ const state = {
 const NewTransaction = () => {
     const [name, setName] = useState()
     const [value, setValue] = useState()
+    const [post, setPost] = useState([])
+
 
 
     const handleSubmit = e => {
@@ -38,9 +42,40 @@ const NewTransaction = () => {
             })
 
     }
+    // Calling database for jobs
+    useEffect(() => {
+        const jobs = async () => {
+            const res = await axios(
+                '/api/scraightUp/job-routes/'
+            );
+            setPost(res.data);
+            console.log(res);
+        };
+
+        jobs();
+    }, []);
+
+
+
+
 
     return (
         <div className="container" style={style}>
+            {/* Rendering job name */}
+            <div className="text-white">
+                <ul>
+                    {post.map(post => (
+                        <li key={post.id}>
+                            {post.name} , 
+                            {post.company} , 
+                            {post.bid} , 
+                            {post.budget} ,
+                            {post.dateStarted} , 
+                            {post.finishDate} ,
+                            {post.description}</li>
+                    ))}
+                </ul>
+            </div>
 
             <form onSubmit={handleSubmit}>
                 <div>
@@ -82,6 +117,10 @@ const NewTransaction = () => {
                     }}
                 />
             </div>
+
+
+
+
 
         </div>
 
