@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { Line } from 'react-chartjs-2'
+import React, { useState } from 'react'
+import { Bar } from 'react-chartjs-2'
 import API from '../utils/API'
 const style = {
     height: '100vh',
@@ -17,70 +17,78 @@ const state = {
             backgroundColor: 'rgba(75,192,192,1)',
             borderColor: 'rgba(0,0,0,1)',
             borderWidth: 2,
-            data: [65, 59, 80, 81, 56]
+            data: [65, 59, 80, 81, 56,]
         }
     ]
 }
 
 // export default class MainPage extends React.Component {
 //     render() {
-        const NewTransaction = () => {
-            const [name, setName] = useState()
-            const [value, setValue] = useState()
-            
+const NewTransaction = () => {
+    const [name, setName] = useState()
+    const [value, setValue] = useState()
 
-            const handleSubmit = e => {
-                e.preventDefault()
-                console.log("transaction added")
-                API.createTransaction({ name, value })
-                .then((res) =>{
-                    console.log(res) 
-                })
-               
-            }
-        
-        return (
-            <div className="container" style={style}>
 
-                <div className="form" onSubmit={handleSubmit}>
-                    <input 
-                    type="text" 
-                    id="t-name" 
-                    placeholder="Name of transaction" 
-                    onChange={e=> setName(e.target.value)} />
-                    <input 
-                    type="number" 
-                    id="t-amount" 
-                    placeholder="Transaction amount" 
-                    onChange={e=> setValue(e.target.value)} />
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log("transaction added")
+        API.createTransaction({ name, value })
+            .then((res) => {
+                console.log(res)
+            })
 
-                    <button id="add-btn" > Add Funds <i className="bi bi-plus-square" ></i></button>
-                    <button id="sub-btn" > Subtract Funds <i className="bi bi-dash-square" ></i></button>
+    }
+
+    return (
+        <div className="container" style={style}>
+
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <input
+                        type="text"
+                        id="t-name"
+                        placeholder="Name of transaction"
+                        onChange={e => setName(e.target.value)} />
                 </div>
 
-                <div className="card mt-3 "  >
-                    <Line
-                        data={state}
-                        options={{
-                            title: {
-                                display: 'true',
-                                text: 'Average Rainfall per month',
-                                fontSize: 20
-                            },
-                            legend: {
-                                display: true,
-                                position: 'right'
-                            }
-                        }}
-                    />
+                <div>
+                    <input
+                        type="number"
+                        id="t-amount"
+                        placeholder="Transaction amount"
+                        onChange={e => setValue(e.target.value)} />
                 </div>
 
+                <div>
+                    <button type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
+                    <button type="submit" > Subtract Funds <i className="bi bi-dash-square" ></i></button>
+                </div>
+
+            </form>
+
+            <div className="card mt-3 "  >
+                <Bar
+                    data={state}
+                    options={{
+                        title: {
+                            display: 'true',
+                            text: 'Average Rainfall per month',
+                            fontSize: 20
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        }
+                    }}
+                />
             </div>
 
+        </div>
 
 
-        )
-    }
+
+    )
+}
 
 
 
