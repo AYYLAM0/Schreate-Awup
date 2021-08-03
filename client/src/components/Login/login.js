@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import './style.css'
 import API from '../../utils/API'
-import { useHistory } from 'react-router-dom';
+
 
 const Login = () => {
     const [username, setUsername] = useState();
@@ -18,9 +18,6 @@ const Login = () => {
     })
     }
 
-    let history = useHistory();
-
- 
     return (
         <div>
             <div className="login-box" >
@@ -47,12 +44,7 @@ const Login = () => {
                         onChange={(e)=> setPassword(e.target.value)}
                         />
                         
-                        <input 
-                        type="submit" 
-                        value="Login" 
-                        className="form-control btn btn-outline-primary mt-3 " 
-                        name="" 
-                        onClick={() => { history.push('/mainpage') }}/>
+                        <input type="submit" value="Login" className="form-control btn btn-outline-primary mt-3 " name="" />
 
                         <Link to="/signup">
                         <input type="submit" value="Signup" className="form-control btn btn-outline-success mt-3 " name="" />
