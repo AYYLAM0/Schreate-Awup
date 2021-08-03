@@ -9,7 +9,7 @@ router.route('/').get((req,res) => {
     .catch(err => res.status(400).json('Error ' + err))
 })
 router.route('/add').post((req,res)=>{
-
+    
     const bid = req.body.bid
     const name = req.body.name
     const company = req.body.company
@@ -18,6 +18,7 @@ router.route('/add').post((req,res)=>{
     const finish = req.body.finishDate
     const description = req.body.description
     const newJob = new Job({
+  
          bid,
          name,
          company,
