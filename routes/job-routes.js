@@ -18,7 +18,7 @@ router.route('/add').post((req,res)=>{
     const finish = req.body.finishDate
     const description = req.body.description
     const newJob = new Job({
-  
+         
          bid,
          name,
          company,

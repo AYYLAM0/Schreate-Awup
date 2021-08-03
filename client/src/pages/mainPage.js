@@ -33,29 +33,30 @@ const state = {
                 e.preventDefault()
                 console.log("transaction added")
                 API.createTransaction({ name, value })
-                .then((res) =>{
-                    console.log(res) 
+                .then((response) =>{
+                    console.log(response) 
                 })
                
             }
         
         return (
-            <div className="container" style={style}>
+            <div className="container" style={style}  >
 
-                <div className="form" onSubmit={handleSubmit}>
+                <div className="form" >
                     <input 
                     type="text" 
                     id="t-name" 
                     placeholder="Name of transaction" 
-                    onChange={e=> setName(e.target.value)} />
+                    onChange={e=> setName(e.target.value)}
+                     />
                     <input 
                     type="number" 
                     id="t-amount" 
                     placeholder="Transaction amount" 
                     onChange={e=> setValue(e.target.value)} />
 
-                    <button id="add-btn" > Add Funds <i className="bi bi-plus-square" ></i></button>
-                    <button id="sub-btn" > Subtract Funds <i className="bi bi-dash-square" ></i></button>
+                    <button id="add-btn" onSubmit={handleSubmit} > Add Funds <i className="bi bi-plus-square"  ></i></button>
+                    <button id="sub-btn" onSubmit={handleSubmit} > Subtract Funds <i className="bi bi-dash-square" ></i></button>
                 </div>
 
                 <div className="card mt-3 "  >
@@ -78,10 +79,10 @@ const state = {
             </div>
 
 
-
-        )
+  
+                      )
     }
-
+        
 
 
 export default NewTransaction
