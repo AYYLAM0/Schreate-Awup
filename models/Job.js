@@ -4,12 +4,7 @@ const Schema = mongoose.Schema;
 
 const JobSchema = new Schema(
   {
-  id:{
-    type: Number,
-    required: false,
-    sparse:true,
-    index: true
-  },
+  
     bid:{
       type: Number,
       required: true,
