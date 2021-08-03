@@ -25,7 +25,7 @@ router.route('/signin').post((req, res, next) => {
     passport.authenticate('local', function(err, user, info) {
         if (err) { return next(err) }
         console.log(user)
-        if (!user) { return res.json("incorrect username"); }
+        if (!user) { return res.json("incorrect username or password"); }
         req.logIn(user, function(err) {
             if (err) { return next(err); }
             console.log(user._id)

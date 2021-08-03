@@ -55,10 +55,6 @@ const NewTransaction = () => {
         jobs();
     }, []);
 
-
-
-
-
     return (
         <div className="container" style={style}>
             {/* Rendering job name */}

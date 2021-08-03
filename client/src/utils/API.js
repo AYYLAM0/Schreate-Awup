@@ -17,6 +17,9 @@ createJob: function(job){
 },
 createTransaction: function(transaction){
     return axios.post("/api/scraightUp/budget-routes/add", transaction)
+},
+getJobInfo: function(job){
+    return axios.get("/api/scraightUp/job-routes/", job)
 }
 
 }
