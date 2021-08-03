@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import moment from 'moment'
-import "./calendar.css";
 
 import buildCalendar from "./build";
 
