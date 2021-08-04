@@ -15,6 +15,9 @@ const Login = () => {
     API.signIn({ username, password})
     .then(res => {
         console.log(res)
+        if (res.status === 200) {
+            window.location.replace('/mainpage')
+        }
     })
     }
 
