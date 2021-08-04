@@ -8,6 +8,7 @@ router.route('/').get((req, res) => {
 })
 
 router.route('/add').post((req, res) => {
+    console.log("in route")
     const name = req.body.name
     const value = req.body.value
     
@@ -18,7 +19,7 @@ router.route('/add').post((req, res) => {
       
     })
     newBudget.save()
-    .then(() => res.json('transaction added!'))
+    .then(() => res.json('transaction added! from backend'))
     .catch(err => {
         console.log(err)
      res.status(400).json('Error ' + err);

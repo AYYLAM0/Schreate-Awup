@@ -1,11 +1,9 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
-
+ 
   return (
     <div className='nav-container'>
       <nav className="navbar navbar-expand-lg navbar-toggleable-sm">
@@ -22,7 +20,7 @@ const Navbar = () => {
                 <Link className="link" to='/currentjobs' >Current Jobs</Link>
               </li>
               <li className="nav-item px-2">
-                <Link className="link" to='/Logout' >Logout</Link>
+                <Link className="link" to='/' >Logout</Link>
               </li>
             </ul>
           </div>

@@ -18,9 +18,9 @@ const NewTransaction = () => {
         e.preventDefault()
         console.log("transaction added")
         API.createTransaction({ name, value })
-            .then((res) => {
-                console.log(res)
-            })
+        .then((res) => {
+            console.log(res)
+        })
 
     }
 
@@ -35,7 +35,7 @@ const NewTransaction = () => {
         };
 
         budget();
-    }, []);
+    }, [value]);
 
     return (
         <div className="container" style={style}>

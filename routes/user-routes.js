@@ -8,26 +8,20 @@ router.route('/').get((req, res) => {
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error ' + err));
 });
-
+ // add bcrypt password hashing
 router.post('/add', async (req, res) => {
     console.log(req.body)   
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const username = req.body.username;
     const password = hashedPassword
-    // add bcrypt password hashing
- 
-
     const newUser = new User({ username, password });
-
     newUser.save()
     .then(() => res.json('User added!'))
     .catch(err => res.status(400).json('Error ' + err));
 });
-
 router.post('/signin', async (req, res, next) => {
     console.log(req.body)
-
     passport.authenticate('local', function(err, user, info) {
         if (err) { return next(err) }
         console.log(user)
@@ -38,11 +32,10 @@ router.post('/signin', async (req, res, next) => {
             return res.json(user._id)
         })
     })(req, res, next)
-
- })
+})
 router.route('/logout').post((req, res) => {
     req.logout();
-    res.redirect('/');
+    res.json("redirect now");
 });
 
 

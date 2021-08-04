@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './style.css'
 import API from '../../utils/API'
 
@@ -7,6 +7,7 @@ import API from '../../utils/API'
 const Login = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    let history = useHistory();
 
     const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ const Login = () => {
     .then(res => {
         console.log(res)
         if (res.status === 200) {
-            window.location.replace('/mainpage')
+           history.push("/mainpage")
         }
     })
     }
