@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 let User = require('../models/User');
+const bcrypt = require('bcrypt')
 
 router.route('/').get((req, res) => {
     User.find()
@@ -8,11 +9,15 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error ' + err));
 });
 
-router.route('/add').post((req, res) => {
-    console.log(req.body)
+router.post('/add', async (req, res) => {
+    console.log(req.body)   
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const username = req.body.username;
-    const password = req.body.password
+    const password = hashedPassword
     // add bcrypt password hashing
+ 
+
     const newUser = new User({ username, password });
 
     newUser.save()
@@ -20,8 +25,9 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error ' + err));
 });
 
-router.route('/signin').post((req, res, next) => {
+router.post('/signin', async (req, res, next) => {
     console.log(req.body)
+
     passport.authenticate('local', function(err, user, info) {
         if (err) { return next(err) }
         console.log(user)
@@ -33,6 +39,11 @@ router.route('/signin').post((req, res, next) => {
         })
     })(req, res, next)
 
-})
+ })
+router.route('/logout').post((req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
 
 module.exports = router;

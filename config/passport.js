@@ -13,23 +13,23 @@ module.exports = function(passport) {
       .then(user => {
         console.log(user)
         if(!user){
-          return done(null, false, { message: 'That email is not registered' });
+          return done(null, false, { message: 'That user is not registered' });
         }
-        // bcrypt.compare(password, user.password, (err, isMatch) => {
-        //   if(err) throw err;
-        //   if(isMatch) {
-        //     return done(null, user);
-        //   } else {
-        //     console.log("incorrect password")
-        //     return done(null, false, { message: 'Password incorrect'});
-        //   }
-        // });
-        if (password === user.password) {
-          return done(null, user);
-        } else {
-          console.log("incorrect password")
-          return done(null, false, { message: 'Password incorrect'});
-        }
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+          if(err) throw err;
+          if(isMatch) {
+            return done(null, user);
+          } else {
+            console.log("incorrect password")
+            return done(null, false, { message: 'Password incorrect'});
+          }
+        });
+        // if (password === user.password) {
+        //   return done(null, user);
+        // } else {
+        //   console.log("incorrect password")
+        //   return done(null, false, { message: 'Password incorrect'});
+        // }
       })
       .catch(err => console.log(err))
     })

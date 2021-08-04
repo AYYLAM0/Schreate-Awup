@@ -12,6 +12,9 @@ updateUser: function(id,user){
 signIn: function (user) {
     return axios.post("/api/scraightUp/user-routes/signin", user)
 },
+logout: function (user){
+    return axios.post("/api.scraightUp/user-routes/logout", user)
+},
 createJob: function(job){
     return axios.post("/api/scraightUp/job-routes/add", job)
 },
