@@ -15,7 +15,7 @@ const transactionSchema = new Schema(
     },
     date: {
       type: Date,
-      default: new Date().getDate()
+      default: Date.now
     }
   }
 );

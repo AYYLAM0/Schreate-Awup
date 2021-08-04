@@ -57,11 +57,11 @@ const NewJob = () => {
             <div className="row mx-5">
                 <h1 className="text-center">New Job</h1>
                     <p className="text-center">Infomation on Job</p>
-                <form className="col-md-10 go-right mx-5 m-5 pl-5" onSubmit={handleSubmit}>
+                <form className="col-lg-8 go-right mx-5 m-3" onSubmit={handleSubmit}>
 
 
                     {/* Name of Job */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="jobName"
                             type="text"
@@ -72,7 +72,7 @@ const NewJob = () => {
                     </div>
 
                     {/* Name of Company */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="companyName"
                             type="text"
@@ -83,7 +83,7 @@ const NewJob = () => {
                     </div>
 
                     {/* Job Bid */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="jobBid"
                             type="text"
@@ -94,7 +94,7 @@ const NewJob = () => {
                     </div>
 
                     {/* Jobs Budget */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="budget"
                             type="text"
@@ -105,10 +105,11 @@ const NewJob = () => {
                     </div>
 
                     {/* Start Date */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="dateStarted"
                             type="date"
+                            data-date-inline-picker="true"
                             style={style}
                             onChange={e => setStart(e.target.value)}
                             className="form-control" />
@@ -116,10 +117,11 @@ const NewJob = () => {
                     </div>
 
                     {/* Finish Date */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <input
                             name="finishDate"
                             type="date"
+                            data-date-inline-picker="true"
                             style={style}
                             onChange={e => setFinish(e.target.value)}
                             className="form-control" />
@@ -127,7 +129,7 @@ const NewJob = () => {
                     </div>
 
                     {/* Job Details */}
-                    <div className="form-group mb-3 mx-5">
+                    <div className="form-group mb-3">
                         <textarea
                             name="jobDetails"
                             type="text"
@@ -138,7 +140,7 @@ const NewJob = () => {
                     </div>
 
                     {/* Submit Button */}
-                    <div className="d-flex justify-content-center col-sm-9 mx-5">
+                    <div className="d-flex justify-content-center col-sm-12">
                         <input className="btn btn-outline-primary btn-lg" type="submit" value="Submit" />
                     </div>
 

@@ -40,6 +40,7 @@ const NewTransaction = () => {
     return (
         <div className="container" style={style}>
 
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
@@ -65,17 +66,16 @@ const NewTransaction = () => {
             </form>
 
             <div className=" mb-3">
+                <h1>Expenses</h1>
                 <div className="card-body">
-                {post.map(post => (
-                    <div className="card mx-3 p-3" key={post._id}>
-                        
-                       <div>Transaction Name: {post.name}</div> 
-                       <div>Transaction Value: {post.value}</div> 
-                       
+                    {post.map(post => (
+                        <div className="card mx-3 p-3" key={post._id}>
 
-                        
-                    </div>
-                ))}
+                            <div>Transaction Name: {post.name}</div>
+                            <div>Transaction Value: {post.value}</div>
+
+                        </div>
+                    ))}
                 </div>
             </div>
 

@@ -17,11 +17,11 @@ const JobsList = () => {
     }, []);
 
     return (
-        <div classNme="card-group">
+        <div className="card-group">
 
                 <div className="card-body ">
                     {post.map( post => (
-                    <div className = "card p-5 m-5" key={post.id}>
+                    <div className = "card p-5 m-5" key={post._id}>
                         <h1>{post.name}</h1>
                         <li>{post.company} </li>
                         <li>{post.bid}</li>
