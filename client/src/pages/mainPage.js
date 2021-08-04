@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Bar } from 'react-chartjs-2'
 import API from '../utils/API'
 import axios from 'axios'
 
@@ -8,31 +7,13 @@ const style = {
     maxWidth: '150vh'
 
 }
-const state = {
-    labels: ['January', 'February', 'March',
-        'April', 'May'],
-    datasets: [
-        {
-            label: 'Expense',
-            fill: false,
-            lineTension: 0.5,
-            backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: [65, 59, 80, 81, 56,]
-        }
-    ]
-}
 
-// export default class MainPage extends React.Component {
-//     render() {
 const NewTransaction = () => {
     const [name, setName] = useState()
     const [value, setValue] = useState()
     const [post, setPost] = useState([])
 
-
-
+    // Handle submit
     const handleSubmit = e => {
         e.preventDefault()
         console.log("transaction added")
@@ -42,36 +23,22 @@ const NewTransaction = () => {
             })
 
     }
-    // Calling database for jobs
+
+    // Calling database for budgets
     useEffect(() => {
-        const jobs = async () => {
+        const budget = async () => {
             const res = await axios(
-                '/api/scraightUp/job-routes/'
+                '/api/scraightUp/budget-routes/'
             );
             setPost(res.data);
             console.log(res);
         };
 
-        jobs();
+        budget();
     }, []);
 
     return (
         <div className="container" style={style}>
-            {/* Rendering job name */}
-            <div className="text-white">
-                <ul>
-                    {post.map(post => (
-                        <li key={post.id}>
-                            {post.name} , 
-                            {post.company} , 
-                            {post.bid} , 
-                            {post.budget} ,
-                            {post.dateStarted} , 
-                            {post.finishDate} ,
-                            {post.description}</li>
-                    ))}
-                </ul>
-            </div>
 
             <form onSubmit={handleSubmit}>
                 <div>
@@ -97,44 +64,24 @@ const NewTransaction = () => {
 
             </form>
 
-            <div className="card mt-3 "  >
-                <Bar
-                    data={state}
-                    options={{
-                        title: {
-                            display: 'true',
-                            text: 'Average Rainfall per month',
-                            fontSize: 20
-                        },
-                        legend: {
-                            display: true,
-                            position: 'right'
-                        }
-                    }}
-                />
+            <div className=" mb-3">
+                <div className="card-body">
+                {post.map(post => (
+                    <div className="card mx-3 p-3" key={post._id}>
+                        
+                       <div>Transaction Name: {post.name}</div> 
+                       <div>Transaction Value: {post.value}</div> 
+                       
+
+                        
+                    </div>
+                ))}
+                </div>
             </div>
 
-
-
-
-
         </div>
-
-
-
     )
 }
 
-
-
 export default NewTransaction
-// import React from 'react';
-// import Chart from '../components/chart/chart'
 
-// const MainPage = () => {
-//     return (
-//         <Chart />
-//     )
-// }
-
-// export default MainPage;
