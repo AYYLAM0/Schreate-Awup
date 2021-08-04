@@ -10,6 +10,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import './App.css';
 import Form from './pages/form'
 import MainPage from './pages/mainPage';
+import Jobs from './pages/jobs'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <Header />
       <Navbar />
+      <Jobs />
       <Switch>
         <Route exact={true} path="/" component={HomePage} />
         <Route exact={true} path="/signup" component={Signup} />
