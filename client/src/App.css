@@ -56,6 +56,14 @@ body {
     color: white;
   }
   
+  ::-webkit-scrollbar {
+	  background-color:  rgba(128, 128, 128, 0.349);
+  }
+
+  ::-webkit-scrollbar-thumb {
+	  background-color: rgb(247, 182, 5);
+  }
+
   .form-control{
 	  background: transparent;
   }
@@ -135,4 +143,6 @@ body {
 	  padding-top: 5px;
   }
   
-  
+  .display-3 {
+	  color: rgb(247, 182, 5);
+  }
