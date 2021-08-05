@@ -5,14 +5,14 @@
     margin-left: 35%;
     margin-top: 10%;
     position: relative;
-      box-shadow: 21px 12px 24px 10px rgba(0, 0, 0, .5);
-      background: #dadada;
+      box-shadow: 21px 12px 24px 10px rgba(255, 208, 0, 0.5);
+      background: #dadada41;
 }
 
 .login-header {
     text-align: center;
     font-size: 35px;
-    background: linear-gradient(to bottom, #00bfff 0%, #0000ff 100%);
+    background: linear-gradient(to bottom, #faf601 0%, #856202 100%);
     color:#fff;
     position: relative;
       box-shadow: 1px 3px 14px  rgba(0, 0, 0, .5);

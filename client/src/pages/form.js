@@ -3,8 +3,8 @@ import API from '../utils/API'
 
 
 const view = {
-    height: '90vh',
-    maxWidth: '200vh'
+    height: '80vh',
+    maxWidth: '180vh'
 }
 
 const style = {
@@ -16,15 +16,6 @@ const style = {
     width: '40rem'
 }
 
-
-// export class MyForm extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             username: '',
-//             age: null,
-//         };
-//     }
 const NewJob = () => {
     const [bid, setBid] = useState()
     const [name, setName] = useState()
@@ -34,13 +25,6 @@ const NewJob = () => {
     const [finishDate, setFinish] = useState()
     const [description, setDescription] = useState()
 
-    // myChangeHandler = (event) => {
-    //     let nam = event.target.name;
-    //     let val = event.target.value;
-    //     this.setState({ [nam]: val });
-
-    // }
-    // render() {
     const handleSubmit = e => {
         e.preventDefault();
         console.log("job created for " + name);
@@ -53,11 +37,11 @@ const NewJob = () => {
     };
 
     return (
-        <div className="container bg-white border border-primary round mt-2" style={view}>
+        <div className="container bg-secondary border border-warning border-3 mt-2" style={view}>
             <div className="row mx-5">
-                <h1 className="text-center">New Job</h1>
-                    <p className="text-center">Infomation on Job</p>
-                <form className="col-lg-8 go-right mx-5 m-3" onSubmit={handleSubmit}>
+                <h1 className="text-center text-warning mb-5 p-3">New Job</h1>
+                    
+                <form className="col-lg-8 go-right" onSubmit={handleSubmit}>
 
 
                     {/* Name of Job */}
@@ -67,8 +51,8 @@ const NewJob = () => {
                             type="text"
                             style={style}
                             onChange={e => setName(e.target.value)}
-                            className="form-control" />
-                        <label>Name of Job :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Name of Job :</label>
                     </div>
 
                     {/* Name of Company */}
@@ -78,8 +62,8 @@ const NewJob = () => {
                             type="text"
                             style={style}
                             onChange={e => setCompany(e.target.value)}
-                            className="form-control" />
-                        <label>Name of Company :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Name of Company :</label>
                     </div>
 
                     {/* Job Bid */}
@@ -89,8 +73,8 @@ const NewJob = () => {
                             type="text"
                             style={style}
                             onChange={e => setBid(e.target.value)}
-                            className="form-control" />
-                        <label>Job Bid :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Job Bid :</label>
                     </div>
 
                     {/* Jobs Budget */}
@@ -100,8 +84,8 @@ const NewJob = () => {
                             type="text"
                             style={style}
                             onChange={e => setBudget(e.target.value)}
-                            className="form-control" />
-                        <label>Jobs Budget :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Jobs Budget :</label>
                     </div>
 
                     {/* Start Date */}
@@ -112,8 +96,8 @@ const NewJob = () => {
                             data-date-inline-picker="true"
                             style={style}
                             onChange={e => setStart(e.target.value)}
-                            className="form-control" />
-                        <label>Start Date :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Start Date :</label>
                     </div>
 
                     {/* Finish Date */}
@@ -124,8 +108,8 @@ const NewJob = () => {
                             data-date-inline-picker="true"
                             style={style}
                             onChange={e => setFinish(e.target.value)}
-                            className="form-control" />
-                        <label>Job Due Date :</label>
+                            className="form-control border border-2 border-warning rounded-3" />
+                        <label className="text-warning">Job Due Date :</label>
                     </div>
 
                     {/* Job Details */}
@@ -135,13 +119,13 @@ const NewJob = () => {
                             type="text"
                             style={style}
                             onChange={e => setDescription(e.target.value)}
-                            className="form-control"></textarea>
-                        <label>Jobs Details :</label>
+                            className="form-control border border-2 border-warning rounded-3"></textarea>
+                        <label className="text-warning">Jobs Details :</label>
                     </div>
 
                     {/* Submit Button */}
                     <div className="d-flex justify-content-center col-sm-12">
-                        <input className="btn btn-outline-primary btn-lg" type="submit" value="Submit" />
+                        <input className="btn btn-outline-warning btn-lg" type="submit" value="Submit" />
                     </div>
 
                 </form>
@@ -150,11 +134,5 @@ const NewJob = () => {
         </div>
     );
 }
-//     }
-// }
-
-
-
-
 
 export default NewJob

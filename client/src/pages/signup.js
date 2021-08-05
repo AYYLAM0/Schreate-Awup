@@ -49,7 +49,7 @@ const Signup = () => {
                         <button type="submit" className="form-control btn btn-outline-success mt-3">Sign-up!</button>
                     </div>
 
-                    <Link className="login-link d-flex justify-content-center " to="/">
+                    <Link className="login-link d-flex justify-content-center text-warning" to="/">
                         Already have an account? Login here!
                     </Link>
 
