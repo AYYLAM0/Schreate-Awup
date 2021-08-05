@@ -23,12 +23,12 @@ const JobSchema = new Schema(
     },
     dateStarted : {
       type: Date,
-      default: new Date().getDate(),
+      default: Date.now(),
       sparse: true
     },
     finishDate: {
         type: Date,
-        default: new Date().getDate()+7,
+        default: Date.now()+7,
         sparse: true
     },
     description:{

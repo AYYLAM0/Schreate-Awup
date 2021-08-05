@@ -57,7 +57,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setName(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Name of Job :</label>
+                        <label className="text-white">Name of Job :</label>
                     </div>
 
                     {/* Name of Company */}
@@ -68,7 +68,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setCompany(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Name of Company :</label>
+                        <label className="text-white">Name of Company :</label>
                     </div>
 
                     {/* Job Bid */}
