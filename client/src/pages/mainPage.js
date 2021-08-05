@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import API from '../utils/API'
+import { useHistory } from "react-router-dom"
 import axios from 'axios'
 
 const style = {
@@ -11,27 +12,32 @@ const NewTransaction = () => {
     const [name, setName] = useState()
     const [value, setValue] = useState()
     const [post, setPost] = useState([])
+    let history = useHistory();
 
     // Handle submit
     const handleSubmit = e => {
         e.preventDefault()
         console.log("transaction added")
         API.createTransaction({ name, value })
-        .then((res) => {
-            console.log(res)
-        })
+            .then((res) => {
+                console.log(res)
+            })
 
     }
 
     // Calling database for budgets
-    useEffect(() => {   
-        
+    useEffect(() => {
         const budget = async () => {
             const res = await axios(
                 '/api/scraightUp/budget-routes/'
             );
-            setPost(res.data);
-            console.log(res);
+            if (res.data === "redirect") {
+                history.push("/");
+            } else {
+                setPost(res.data);
+                console.log(res);
+            }
+
         };
 
         budget();
@@ -60,7 +66,7 @@ const NewTransaction = () => {
 
                 <div className="d-flex justify-content-center mt-2">
                     <button className="btn btn-outline-warning mt-3 w-25" type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
-                    
+
                 </div>
 
             </form>

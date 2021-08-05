@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import API from '../utils/API'
+import { useHistory } from "react-router-dom"
 
 
 const view = {
@@ -17,6 +18,7 @@ const style = {
 }
 
 const NewJob = () => {
+    let history = useHistory();
     const [bid, setBid] = useState()
     const [name, setName] = useState()
     const [company, setCompany] = useState()
@@ -31,6 +33,9 @@ const NewJob = () => {
 
         API.createJob({ bid, name, company, budget, dateStarted, finishDate, description })
             .then((response) => {
+                if(response.data === "redirect"){
+                    history.push("/")
+                }
                 console.log(response)
             })
 
@@ -74,7 +79,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setBid(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Job Bid :</label>
+                        <label className="text-white">Job Bid :</label>
                     </div>
 
                     {/* Jobs Budget */}
@@ -85,7 +90,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setBudget(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Jobs Budget :</label>
+                        <label className="text-white">Jobs Budget :</label>
                     </div>
 
                     {/* Start Date */}
@@ -97,7 +102,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setStart(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Start Date :</label>
+                        <label className="text-white">Start Date :</label>
                     </div>
 
                     {/* Finish Date */}
@@ -109,7 +114,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setFinish(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3" />
-                        <label className="text-warning">Job Due Date :</label>
+                        <label className="text-white">Job Due Date :</label>
                     </div>
 
                     {/* Job Details */}
@@ -120,7 +125,7 @@ const NewJob = () => {
                             style={style}
                             onChange={e => setDescription(e.target.value)}
                             className="form-control border border-2 border-warning rounded-3"></textarea>
-                        <label className="text-warning">Jobs Details :</label>
+                        <label className="text-white">Jobs Details :</label>
                     </div>
 
                     {/* Submit Button */}

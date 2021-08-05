@@ -17,7 +17,7 @@ app.use(passport.session());
 
 require('dotenv').config()
 const atlas = process.env.ATLAS_URI
-mongoose.connect(atlas || "mongodb://localhost/ScraightUP",{ 
+mongoose.connect(atlas || "mongodb://localhost/scraightup",{ 
     useNewUrlParser: true, 
     useCreateIndex: true, 
     useUnifiedTopology: true

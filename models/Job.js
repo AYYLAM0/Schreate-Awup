@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const JobSchema = new Schema(
   {
-  
     bid:{
       type: Number,
       required: true,
@@ -33,6 +32,9 @@ const JobSchema = new Schema(
         sparse: true
     },
     description:{
+      type: String
+    },
+    user: {
       type: String
     }
   }

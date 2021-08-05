@@ -17,27 +17,37 @@ router.post('/add', async (req, res) => {
     const password = hashedPassword
     const newUser = new User({ username, password });
     newUser.save()
-    .then(() => res.json('User added!'))
+    .then((user) => {
+        req.logIn(user, function(err) {
+            if (err) { return next(err); }
+            console.log(user._id)
+            return res.json("User Added!")
+        })
+    })
     .catch(err => res.status(400).json('Error ' + err));
 });
 router.post('/signin', async (req, res, next) => {
-    console.log(req.body)
     passport.authenticate('local', function(err, user, info) {
-        if (err) { return next(err) }
-        console.log(user)
+        if (err) { 
+            console.log(err)
+            return next(err) 
+        }
         if (!user) { return res.json("incorrect username or password"); }
         req.logIn(user, function(err) {
-            if (err) { return next(err); }
+            if (err) { 
+                console.log(err)
+                return next(err); 
+            }
             console.log(user._id)
             return res.json(user._id)
         })
     })(req, res, next)
-})
-router.get('/logout', function (req, res){
-    req.session.destroy(function (err) {
-      res.redirect('/'); //Inside a callback… bulletproof!
-    });
-  });
+});
+router.route('/logout').post((req, res) => {
+    console.log("logging out")
+    req.logout();
+    res.json("redirect now");
+});
 
 
 module.exports = router;

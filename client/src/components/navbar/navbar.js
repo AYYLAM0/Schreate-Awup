@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import API from "../../utils/API"
 
 
 const Navbar = () => {
  
   const logOut = () => {
-    localStorage.clear();
-    window.location.href = '/'
+    API.logout().then(response => {
+      console.log(response)
+    })
   }
 
   return (

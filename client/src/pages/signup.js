@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import API from '../utils/API'
 
 const Signup = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    let history = useHistory();
   
 
     const handleSubmit = e => {
@@ -14,6 +15,7 @@ const Signup = () => {
         API.createUser({ username, password })
         .then((response) => {
             console.log(response)
+            history.push("/");
         })
      
     };
