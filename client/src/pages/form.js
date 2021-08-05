@@ -4,7 +4,7 @@ import API from '../utils/API'
 
 const view = {
     height: '90vh',
-    maxWidth: '200vh'
+    maxWidth: '180vh'
 }
 
 const style = {
@@ -57,7 +57,7 @@ const NewJob = () => {
             <div className="row mx-5">
                 <h1 className="text-center">New Job</h1>
                     <p className="text-center">Infomation on Job</p>
-                <form className="col-lg-8 go-right mx-5 m-3" onSubmit={handleSubmit}>
+                <form className="col-lg-8 go-right" onSubmit={handleSubmit}>
 
 
                     {/* Name of Job */}

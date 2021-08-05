@@ -5,7 +5,6 @@ import axios from 'axios'
 const style = {
     height: '100vh',
     maxWidth: '150vh'
-
 }
 
 const NewTransaction = () => {
@@ -42,37 +41,37 @@ const NewTransaction = () => {
 
 
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="mb-2 mt-3 d-flex justify-content-center">
                     <input
                         type="text"
-                        id="t-name"
                         placeholder="Name of transaction"
+                        className="text-white border border-2 border-warning rounded-3 w-75 bg-secondary"
                         onChange={e => setName(e.target.value)} />
                 </div>
 
-                <div>
+                <div className="d-flex justify-content-center text-white">
                     <input
                         type="number"
-                        id="t-amount"
                         placeholder="Transaction amount"
+                        className="text-white border border-2 border-warning rounded-3 w-75 bg-secondary"
                         onChange={e => setValue(e.target.value)} />
                 </div>
 
-                <div>
-                    <button type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
-                    <button type="submit" > Subtract Funds <i className="bi bi-dash-square" ></i></button>
+                <div className="d-flex justify-content-center mt-2">
+                    <button className="btn btn-warning mt-3 w-25" type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
+                    
                 </div>
 
             </form>
 
-            <div className=" mb-3">
-                <h1>Expenses</h1>
+            <div className=" p-3">
+                <h1 className="text-center text-white">EXPENSES</h1>
                 <div className="card-body">
                     {post.map(post => (
-                        <div className="card mx-3 p-3" key={post._id}>
+                        <div className="bg-secondary mx-3 mb-1 p-3 border border-2 rounded-3 border-warning " key={post._id}>
 
-                            <div>Transaction Name: {post.name}</div>
-                            <div>Transaction Value: {post.value}</div>
+                            <div className="text-white"> {post.name}</div>
+                            <div className="text-white">${post.value}</div>
 
                         </div>
                     ))}

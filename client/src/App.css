@@ -51,7 +51,10 @@ body {
 	  width: 50rem;
 	  height: 6rem;
 	}
-		  
+	
+::placeholder {
+    color: white;
+  }
   
   
   .form-control{
