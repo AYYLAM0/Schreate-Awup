@@ -33,10 +33,11 @@ router.post('/signin', async (req, res, next) => {
         })
     })(req, res, next)
 })
-router.route('/logout').post((req, res) => {
-    req.logout();
-    res.json("redirect now");
-});
+router.get('/logout', function (req, res){
+    req.session.destroy(function (err) {
+      res.redirect('/'); //Inside a callback… bulletproof!
+    });
+  });
 
 
 module.exports = router;

@@ -25,7 +25,8 @@ const NewTransaction = () => {
     }
 
     // Calling database for budgets
-    useEffect(() => {
+    useEffect(() => {   
+        
         const budget = async () => {
             const res = await axios(
                 '/api/scraightUp/budget-routes/'

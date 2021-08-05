@@ -32,7 +32,6 @@ const userRouter = require('./routes/user-routes')
 const jobRouter = require('./routes/job-routes')
 const budgetRouter = require('./routes/budget-routes')
 
-
 app.use('/api/scraightUp/user-routes', userRouter)
 app.use('/api/scraightUp/job-routes', jobRouter)
 app.use('/api/scraightUp/budget-routes', budgetRouter)
