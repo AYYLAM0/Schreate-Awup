@@ -37,7 +37,7 @@ const NewJob = () => {
     };
 
     return (
-        <div className="container bg-secondary border border-warning border-3 mt-2" style={view}>
+        <div className="container form-background border border-warning border-3 mt-2" style={view}>
             <div className="row mx-5">
                 <h1 className="text-center text-warning mb-5 p-3">New Job</h1>
                     
@@ -123,11 +123,11 @@ const NewJob = () => {
                         <label className="text-warning">Jobs Details :</label>
                     </div>
 
+
                     {/* Submit Button */}
                     <div className="d-flex justify-content-center col-sm-12">
                         <input className="btn btn-outline-warning btn-lg" type="submit" value="Submit" />
                     </div>
-
                 </form>
 
             </div>
