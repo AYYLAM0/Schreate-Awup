@@ -28,7 +28,7 @@ connection.once('open', () => {
     console.log('connection established')
 
 })
-if(proccess.env.NODE_ENV === 'production'){
+if(proccess.env.NODE_ENV === "production"){
     app.use(express.static('client/build'))
 }
 const userRouter = require('./routes/user-routes')
