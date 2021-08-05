@@ -58,7 +58,7 @@ const NewTransaction = () => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-2">
-                    <button className="btn btn-warning mt-3 w-25" type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
+                    <button className="btn btn-outline-warning mt-3 w-25" type="submit" > Add Funds <i className="bi bi-plus-square" ></i></button>
                     
                 </div>
 

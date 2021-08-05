@@ -5,10 +5,10 @@ const Header = () => {
     
     return (
         <div>
-            <div className="jumbotron navbar-dark bg-dark text-white d-flex justify-content-between">
-                <h1 className="display-6">Schreate-Awup</h1>
+            <div className="jumbotron navbar-dark bg-dark text-white d-flex justify-content-center">
+                <h1 className="display-3">Schreate-Awup</h1>
                 <p className="lead">
-                    Description if project will go here
+                    
                 </p>
                 
                 

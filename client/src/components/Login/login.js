@@ -48,7 +48,10 @@ const Login = () => {
                         onChange={(e)=> setPassword(e.target.value)}
                         />
                         
-                        <input type="submit" value="Login" className="form-control btn btn-outline-primary mt-3 " name="" />
+                        <input 
+                        type="submit" 
+                        value="Login" 
+                        className="form-control btn btn-outline-warning mt-3 " />
 
                         <Link to="/signup">
                         <input type="submit" value="Signup" className="form-control btn btn-outline-success mt-3 " name="" />
