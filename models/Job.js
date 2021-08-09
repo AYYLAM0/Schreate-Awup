@@ -28,7 +28,7 @@ const JobSchema = new Schema(
     },
     finishDate: {
         type: Date,
-        default: Date.now()+7,
+        default: Date.now() +7,
         sparse: true
     },
     description:{
