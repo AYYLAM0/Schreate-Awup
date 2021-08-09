@@ -16,7 +16,7 @@ const NewTransaction = () => {
 
     // Handle submit
     const handleSubmit = e => {
-        e.preventDefault()
+        // e.preventDefault()
         console.log("transaction added")
         API.createTransaction({ name, value })
             .then((res) => {
@@ -41,7 +41,7 @@ const NewTransaction = () => {
         };
 
         budget();
-    }, [value]);
+    }, [history]);
 
     return (
         <div className="container" style={style}>

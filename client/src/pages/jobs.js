@@ -20,7 +20,7 @@ const JobsList = () => {
         };
 
         jobs();
-    }, []);
+    }, [history]);
 
     return (
         <div className="card-group ">

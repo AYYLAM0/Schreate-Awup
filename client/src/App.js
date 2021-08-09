@@ -10,6 +10,7 @@ import './App.css';
 import Form from './pages/form'
 import MainPage from './pages/mainPage';
 import Jobs from './pages/jobs'
+import ChartGraph from './components/chart/chart';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route exact={true} path="/newform" component={Form} />
         <Route exact={true} path="/mainpage" component={MainPage} />
         <Route exact={true} path="/currentjobs" component={Jobs} />
+        <Route exact={true} path="/chart" component={ChartGraph} />
+
       </Switch>
       <Footer />
     </Router>

@@ -29,6 +29,9 @@ const Navbar = () => {
               <li className="nav-item px-2">
                 <Link className="link text-warning" to='' onClick={logOut}>Logout</Link>
               </li>
+              <li className="nav-item px-2">
+                <Link className="link text-warning" to='/chart' >Chart</Link>
+              </li>
             </ul>
           </div>
         </div>
